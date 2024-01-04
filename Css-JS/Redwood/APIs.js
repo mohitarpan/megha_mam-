@@ -43,12 +43,11 @@ function timerIncrement() {
 
 // 
 var isFirstLoad = true;
-// here "trg" parameter for opencity function but it doest not take any value so i removed from line no:47
-function openCity(evt, cityName) { 
-    if (evt) evt.preventDefault();
-    // As of trg here i,x,tablinks are also not used here so removed "i","x""tablinks"
-    var cN, urlTag, authTab = 0;
-    urlTag = 'FECreditAPI.aspx';
+function openCity(evt, cityName, trg) {
+    if (evt)
+        evt.preventDefault();
+    var i, x, tablinks, cN, urlTag, authTab = 0;
+    urlTag = 'FECreditCIN.aspx';
     var screenname = '<%= Session["AccessMatrix"] %>';
     if (cityName == 'API') {
         cN = 'API';
@@ -118,6 +117,10 @@ function openCity(evt, cityName) {
     else
         window.location.href = urlTag;
 }
+var isFirstLoad = true;
+function openCity(evt, cityName) { 
+    if (evt) evt.preventDefault();
+    
 $(document).ready(function () {
     //SearchText();
     ifCust();
@@ -133,17 +136,10 @@ function ifCust() {
     });
 };
 ifCust();
-/* <script> */
-////function onpageload() {
-////    document.getElementById('NG').style.display = 'none';
-////    isFirstLoad = false;
-////    init();
-////}
-////jQuery(document).ready(function () {
-////    setTimeout(updatemap, 2000);
-////    function updatemap() {
-////        document.getElementById('GM').style.display = 'none';
-////    }
-////});
 
-// </script>
+
+//
+// here "trg" parameter for opencity function but it doest not take any value so i removed from line no:47
+ // As of trg here i,x,tablinks are also not used here so removed "i","x""tablinks"
+
+}
