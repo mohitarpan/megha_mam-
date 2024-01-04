@@ -43,10 +43,11 @@ function timerIncrement() {
 
 // 
 var isFirstLoad = true;
-function openCity(evt, cityName, trg) {
-    if (evt)
-        evt.preventDefault();
-    var i, x, tablinks, cN, urlTag, authTab = 0;
+// here "trg" parameter for opencity function but it doest not take any value so i removed from line no:47
+function openCity(evt, cityName) { 
+    if (evt) evt.preventDefault();
+    // As of trg here i,x,tablinks are also not used here so removed "i","x""tablinks"
+    var cN, urlTag, authTab = 0;
     urlTag = 'FECreditAPI.aspx';
     var screenname = '<%= Session["AccessMatrix"] %>';
     if (cityName == 'API') {
