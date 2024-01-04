@@ -333,3 +333,16 @@
   width: 1px; 
   height: 1px;
 }
+/*  here ContactInfo.aspx css file  */
+.w3-container w3-white{
+  margin: 0; 
+  padding: 0;
+}
+.w3-modal-content w3-animate-zoom w3-border{
+  max-width: 1400px; 
+  margin-top: 1em;
+}
+.Div_tab{
+  font-family: 'Times New Roman', Times, serif; 
+  font-size: 15px;
+}
