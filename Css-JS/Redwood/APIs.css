@@ -322,3 +322,14 @@
 .w3-content w3-border fe-col{
     max-width: 1400px;
 }
+/* here changes from caseDetails.aspx */
+.w3-text-teal{
+  width: 3%; 
+  margin-right: 0.5%;
+}
+#docFrame{
+  border: none; 
+  overflow: hidden; 
+  width: 1px; 
+  height: 1px;
+}
