@@ -1,0 +1,275 @@
+.on {
+  display: block;
+}
+
+.off {
+  display: none;
+}
+
+body {
+  font-family: Arial;
+  font-size: 12pt;
+}
+
+headttable {
+  padding: 4px 2px;
+  color: #fff;
+  background: #363670 url(images/grid-header.png) repeat-x top;
+  border-left: solid 1px #525252;
+  font-size: 0.9em;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+table th {
+  background-color: #b8dbfd;
+  color: #333;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+table,
+table table td {
+  border: 0px solid #ccc;
+}
+
+.Grid {
+  background-color: #fff;
+  margin: 5px 0 10px 0;
+  border: solid 1px #525252;
+  border-collapse: collapse;
+  font-family: Calibri;
+  color: #474747;
+}
+
+.Grid td {
+  padding: 2px;
+  border: solid 1px #c1c1c1;
+}
+
+.Grid th {
+  padding: 4px 2px;
+  color: #fff;
+  background: #363670 url(images/grid-header.png) repeat-x top;
+  border-left: solid 1px #525252;
+  font-size: 0.9em;
+}
+
+.Grid .alt {
+  background: #fcfcfc url(images/grid-alt.png) repeat-x top;
+}
+
+.Grid .pgr {
+  background: #363670 url(images/grid-pgr.png) repeat-x top;
+}
+
+.Grid .pgr table {
+  margin: 3px 0;
+}
+
+.Grid .pgr td {
+  border-width: 0;
+  padding: 0 6px;
+  border-left: solid 1px #666;
+  font-weight: bold;
+  color: #fff;
+  line-height: 12px;
+}
+
+.Grid .pgr a {
+  color: Gray;
+  text-decoration: none;
+}
+
+.Grid .pgr a:hover {
+  color: #000;
+  text-decoration: none;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.fe-col {
+  background-color: #008848 !important;
+  color: #ffffff;
+}
+/* .errcolor {
+} */
+
+.w3-content w3-margin-top {
+  max-width: 1400px;
+}
+.im {
+  width: 40%;
+  padding: 3% 0% 1% 0%;
+}
+.w3-content w3-third {
+  font-family: "Volkhov", serif;
+}
+.w3-content w3-third {
+  padding: 1%;
+}
+#updateUserDiv {
+  display: block;
+  min-height: 38em;
+}
+.tave {
+  margin-top: 2px;
+}
+#Update {
+  background-color: #008848;
+}
+#Add_new {
+  background-color: #008848;
+}
+.Add_new_user {
+  text-decoration-color: white;
+  align-items: flex-end;
+}
+/* here is FECredit_Action*/
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.fe-col {
+  background-color: #008848 !important;
+  color: #ffffff;
+}
+
+/* .errcolor { */
+/* } */
+.w3-left {
+  width: 40%;
+  padding: 3% 0% 1% 0%;
+}
+.w3-center w3-padding {
+  font-family: "Volkhov", serif;
+}
+.w3-container w3-margin w3-white {
+  min-height: 38em;
+}
+.w3-modal-content w3-animate-zoom w3-border {
+  max-width: 500px;
+  margin-top: 5em;
+}
+/*  */
+#vsErrorList {
+  color: red;
+  font-size: medium;
+  background-color: snow;
+}
+#vsEdit {
+  color: red;
+  font-size: medium;
+  background-color: snow;
+}
+#Update {
+  background-color: #008848;
+}
+/* here credit BulkData css */
+#Search {
+  background-color: #008848;
+}
+/*  change password */
+#w3-modele-zoom-border {
+  max-width: 400px;
+  margin-top: 5em;
+}
+#aGoBack {
+  color: red;
+}
+
+.tava {
+  margin-top: 0.5px;
+}
+#tblModules {
+  margin-top: 2px;
+}
+/* here css for reports */
+.w3-modele-zoom-border-fil {
+  max-width: 1400px;
+  margin-top: 5em;
+}
+
+#ted {
+  width: 110px;
+}
+#pos {
+  width: 160px;
+}
+#tblALR {
+  margin-top: 2px;
+}
+#back {
+  background-color: #008848;
+}
+#tblACR {
+  margin-top: 2px;
+}
+#tblSLR {
+  margin-top: 2px;
+}
+#tblLFR {
+  margin-top: 2px;
+}
+#tblMLR {
+  margin-top: 2px;
+}
+#tblMDR {
+  margin-top: 2px;
+}
+#tblWHR {
+  margin-top: 2px;
+}
+#tblSVR {
+  margin-top: 2px;
+}
+#tblMSR {
+  margin-top: 2px;
+}
+#dvExport {
+  align-items: center;
+}
+#Tube {
+  border: none;
+  width: inherit;
+}
+#tube_Td {
+  border: none;
+}
+/* here is confiData */
+#tblCParameters {
+  margin-top: 2px;
+}
+/* GroupUser */
+.w3-container w3-card w3-white w3-margin-bottom {
+  max-width: 400px;
+  margin-top: 5em;
+}
+/* forgotpass */
+#aBackLogin {
+  color: red;
+}

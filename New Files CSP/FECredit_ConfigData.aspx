@@ -1,19 +1,26 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"
-CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
+CodeFile="FECredit_ConfigData.aspx.cs" Inherits="FECredit_ConfigData" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head runat="server">
-    <title>FECREDIT USER ROLE ACCESS</title>
+    <title>FECREDIT CONFIGURE DATA</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="Content/w3.css" />
     <link rel="stylesheet" href="Content/googleapis.css" />
     <link rel="stylesheet" href="Content/font-awesome.min.css" />
-    <link href="Content/fonts.googleapis.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="all_css.css" />
-    <!-- here is external css file -->
-    <script type="text/javascript" src="UserRoleAccess.js"></script>
-    <!-- here is external js file -->
+    <!--here is external css file-->
+    <link href="Content/fonts.googleapis.css" rel="stylesheet" />
+    <script type="text/javascript" src="newjs.js"></script>
+    <!--here is external js file-->
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
+    ></script>
+    <%--
+    <script type="text/javascript" src="scripts/jquery.blockUI.js"></script>
+    --%>
   </head>
   <body>
     <form class="w3-container" runat="server">
@@ -39,16 +46,19 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
               &nbsp;|&nbsp;
               <a href="FECredit_ActionCode.aspx">Manage Action Code</a>
               &nbsp;|&nbsp;
+              <a href="FECredit_UserRoleAccess.aspx">Manage Role Access</a>
+              &nbsp;|&nbsp;
               <a href="FECredit_Reports.aspx">Reports</a>&nbsp;|&nbsp;
-              <a href="FECredit_BulkData.aspx">Bulk Data</a>&nbsp;|&nbsp;
+              <a href="FECredit_BulkData.aspx">Bulk Data</a> &nbsp;|&nbsp;
               <a href="FECredit_Logout.aspx">Group Logout</a>
-              &nbsp;|&nbsp;<a href="FECredit_GroupUserDel.aspx"
-                >Group User Delete</a
+              &nbsp;|&nbsp;
+              <a href="FECredit_GroupUserDel.aspx">Group User Delete</a>
+              &nbsp;|&nbsp;<a href="FECredit_ExcludeNumbers.aspx"
+                >Exclude Phone Number</a
               >
               &nbsp;|&nbsp;
               <a href="FECredit_Reset.aspx">Reset Password</a> &nbsp;|&nbsp;
               <a href="FD_Admin.aspx">Home</a> &nbsp;|&nbsp;
-              <a href="FECredit_ConfigData.aspx">Config Data</a> &nbsp;|&nbsp;
               <asp:LinkButton
                 ID="lnkLogout"
                 runat="server"
@@ -58,45 +68,32 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
             </span>
           </div>
         </div>
+
         <div class="w3-container w3-margin w3-white">
-          <div class="w3-modal-content w3-animate-zoom w3-border">
-            <div class="w3-section w3-container" id="divRole">
-              <label><b>Role Description *</b></label>
-              <asp:DropDownList
-                ID="ddlRole"
-                runat="server"
-                CssClass="w3-input w3-border w3-margin-bottom"
-                AutoPostBack="true"
-                OnSelectedIndexChanged="ddlRole_SelectedIndexChanged"
-              />
-              <asp:RequiredFieldValidator
-                ID="rfvRole"
-                runat="server"
-                ErrorMessage="Please select Role"
-                ControlToValidate="ddlRole"
-                Display="None"
-                ForeColor="Red"
-                SetFocusOnError="True"
-                ValidationGroup="submitClick"
-                InitialValue="0"
-              ></asp:RequiredFieldValidator>
-            </div>
-            <table id="tblModules" runat="server" border="3" align="center">
+          <div
+            id="w3-modele-zoom-border"
+            class="w3-modal-content w3-animate-zoom"
+          >
+            <%--
+            <div class="w3-section w3-container" id="divConfig"></div>
+            --%>
+
+            <table id="tblCParameters" runat="server" border="3" align="center">
               <tr>
-                <th id="Update">User Role Access</th>
+                <th id="Update">Configuration Parameters</th>
               </tr>
               <tr>
                 <td>
                   <asp:GridView
-                    ID="gdvModules"
+                    ID="gdvCParameters"
                     runat="server"
                     AutoGenerateColumns="false"
-                    DataKeyNames="FECREDIT_SCREENID"
+                    DataKeyNames="FECREDIT_ID"
                     CssClass="Grid"
                     AlternatingRowStyle-CssClass="alt"
-                    EmptyDataText="No records has been added."
+                    EmptyDataText="No parameters configured yet."
                     Width="450"
-                    OnRowDataBound="gdvModules_RowDataBound"
+                    OnRowDataBound="gdvCParameters_RowDataBound"
                   >
                     <Columns>
                       <asp:TemplateField
@@ -106,67 +103,58 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
                       >
                         <ItemTemplate>
                           <asp:Label
-                            ID="lblgdvid"
+                            ID="lblgdvCParameterId"
                             runat="server"
                             Visible="false"
-                            Text='<%# Eval("FECREDIT_SCREENID") %>'
+                            Text='<%# Eval("FECREDIT_ID") %>'
                           ></asp:Label>
                         </ItemTemplate>
                       </asp:TemplateField>
                       <asp:TemplateField
-                        HeaderText="Screens"
+                        HeaderText="Parameter"
                         ItemStyle-Width="150"
                       >
                         <ItemTemplate>
                           <asp:Label
-                            ID="lblgdvScreenName"
+                            ID="lblgdvCParameterName"
                             runat="server"
-                            Text='<%# Eval("FECREDIT_SCREENNAME") %>'
+                            Text='<%# Eval("FECREDIT_NAME") %>'
                           ></asp:Label>
                         </ItemTemplate>
                       </asp:TemplateField>
                       <asp:TemplateField
-                        HeaderText="View"
+                        HeaderText="Value"
                         ItemStyle-Width="50"
                         ItemStyle-HorizontalAlign="Center"
                       >
                         <ItemTemplate>
-                          <asp:CheckBox
-                            ID="chkgdvView"
+                          <asp:TextBox
+                            ID="txtgdvCParameterValue"
                             runat="server"
-                            onclick="viewCheckboxUnChecked(this);"
+                            Text='<%# Eval("FECREDIT_VALUE") %>'
                           />
-                        </ItemTemplate>
-                      </asp:TemplateField>
-                      <asp:TemplateField
-                        HeaderText="Execution"
-                        ItemStyle-Width="50"
-                        ItemStyle-HorizontalAlign="Center"
-                      >
-                        <ItemTemplate>
-                          <asp:CheckBox
-                            ID="chkgdvExecute"
-                            runat="server"
-                            onclick="executeCheckboxChecked(this)"
-                          />
-                        </ItemTemplate>
-                      </asp:TemplateField>
-                      <asp:TemplateField
-                        HeaderText="Options"
-                        ItemStyle-Width="150"
-                        Visible="false"
-                      >
-                        <ItemTemplate>
-                          <asp:Label
-                            ID="lblgdvOptions"
-                            runat="server"
-                            Visible="false"
-                            Text='<%# Eval("FECREDIT_option") %>'
-                          ></asp:Label>
                         </ItemTemplate>
                       </asp:TemplateField>
                     </Columns>
                   </asp:GridView>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <asp:Label
+                    ID="lblSaturday"
+                    runat="server"
+                    Visible="true"
+                    Text="Coming Saturday"
+                  ></asp:Label>
+                  <asp:RadioButtonList runat="server" ID="rdbSaturday">
+                    <asp:ListItem
+                      Text="Not Working"
+                      Value="0"
+                      Selected="True"
+                    ></asp:ListItem>
+                    <asp:ListItem Text="Half-Day" Value="1"></asp:ListItem>
+                  </asp:RadioButtonList>
                 </td>
               </tr>
             </table>
@@ -185,6 +173,7 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
                     />
                   </td>
 
+                  <%--
                   <td>
                     <asp:Button
                       ID="btnCancel"
@@ -194,6 +183,7 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
                       CssClass="fe-col w3-button w3-block w3-green w3-section w3-padding"
                     />
                   </td>
+                  --%>
                 </tr>
               </table>
               <table>
@@ -209,14 +199,14 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
                       runat="server"
                       ForeColor="Red"
                       Visible="False"
-                      Text="Select Role"
+                      Text="SError Updating !!"
                     ></asp:Label>
                     <asp:Label
                       ID="lbl_success"
                       runat="server"
                       ForeColor="Green"
                       Visible="False"
-                      Text="Role access updated"
+                      Text="Configuration Values Updated"
                     ></asp:Label>
                   </td>
                 </tr>
@@ -226,8 +216,8 @@ CodeFile="FECredit_UserRoleAccess.aspx.cs" Inherits="FECredit_UserRoleAccess" %>
         </div>
         <!-- End Grid -->
       </div>
-      <!-- End Page Container -->
     </form>
+    <!-- End Page Container -->
     <footer class="fe-col w3-container w3-center w3-padding">
       <p>
         2018 - Bản quyền thuộc về

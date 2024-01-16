@@ -1,20 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FECredit_Logout.aspx.cs" Inherits="FECredit_Logout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FECredit_GroupUserDel.aspx.cs" Inherits="FECredit_GroupUserDel" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>FECREDIT GROUP LOGOUT</title>
+    <title>FECREDIT RESET PASSWORD</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="Content/w3.css" />
     <link rel='stylesheet' href='Content/googleapis.css' />
     <link rel="stylesheet" href="Content/font-awesome.min.css" />
     <link href="Content/fonts.googleapis.css" rel="stylesheet" />
-    <link type="text/css" rel="stylesheet" href="all_css.css"><!--here is external css file-->
+    <link rel="stylesheet" href="all_css.css"><!-- here is external css file-->
+    <script type="text/javascript" src="newjs.js"></Script><!-- here is external js file-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <%--<script type="text/javascript" src="scripts/jquery.blockUI.js"></script>--%>
-    <script type="text/javascript" src="alljs.js">
-    </script><!-- here external css file-->
-</head>
 <body>
     <form class="w3-container" runat="server">
         <div class="w3-container">
@@ -37,8 +35,7 @@
                         <a href="FECredit_UserRoleAccess.aspx">Manage Role Access</a>
                         &nbsp;|&nbsp;
                         <a href="FECredit_Reports.aspx">Reports</a>&nbsp;|&nbsp;
-                        <a href="FECredit_BulkData.aspx">Bulk Data</a>   
-                        &nbsp;|&nbsp; <a href="FECredit_GroupUserDel.aspx">Group User Delete</a>     &nbsp;|&nbsp;
+                        <a href="FECredit_BulkData.aspx">Bulk Data</a>    &nbsp;|&nbsp;
                         <a href="FD_Admin.aspx">Home</a>                   &nbsp;|&nbsp;
                         <a href="FECredit_ConfigData.aspx">Config Data</a>                        &nbsp;|&nbsp;
                         <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout" OnClick="lnkLogout_Click"></asp:LinkButton>
@@ -47,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="w3-container w3-margin w3-white">
+            <div class="w3-container w3-margin w3-white" >
                 <div id="w3-modele-zoom-border" class="w3-modal-content w3-animate-zoom w3-border">
                   <%--  <div class="w3-container w3-card w3-white w3-margin-bottom">
                          <div class="w3-container w3-margin-bottom">--%>
@@ -64,15 +61,16 @@
                              <asp:FileUpload ID="fileUploadUser" runat="server" />
                                     </td>
                                     <td>
-                                        <asp:Button ID="btnLogout" runat="server" Text="Logout"
-                                            OnClick="btnLogout_Click" ValidationGroup="submitClick" CssClass="fe-col w3-button w3-block w3-green w3-section w3-padding" /></td>
+                                        <asp:Button ID="btnGrpDel" runat="server" Text="Remove"
+                                            OnClick="btnGrpDel_Click" ValidationGroup="submitClick" CssClass="fe-col w3-button w3-block w3-green w3-section w3-padding" /></td>
                                 </tr>
                                 <tr>
                                     <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
-                                    <asp:Label ID="lbl_error" runat="server" ForeColor="Red" Visible="False" Text="InValid User ID or Password. Enter correct details to Reset Password to the CRE"></asp:Label>
-                                    <asp:Label ID="lbl_success" runat="server" ForeColor="Green" Visible="False" Text="Reset Password to the CRE successful!!"></asp:Label>
+                                   
                                 </tr>
                             </table>
+                             <asp:Label ID="lbl_error" runat="server" ForeColor="Red" Visible="False" Text="InValid User ID or Password. Enter correct details to Reset Password to the CRE"></asp:Label>
+                                    <asp:Label ID="lbl_success" runat="server" ForeColor="Green" Visible="False" Text="Reset Password to the CRE successful!!"></asp:Label>
                         </div>
                     </div>
 
